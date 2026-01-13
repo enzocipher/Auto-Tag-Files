@@ -3,9 +3,9 @@
   "name": "Auto Create Files",
   "version": "1.0.0",
   "minAppVersion": "1.16.0",
-  "description": "Makes it easier to create directories and files.",
+  "description": "Make directories and files in no time.",
   "author": "Enzo Favio (Doron)",
   "authorUrl": "https://github.com/enzocipher",
-  "main": "main.js",
   "isDesktopOnly": false
 }
+
