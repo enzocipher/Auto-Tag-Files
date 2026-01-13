@@ -1,5 +1,5 @@
 {
-  "id": "auto-tag-files",
+  "id": "auto-create-files",
   "name": "Auto Tag Files",
   "version": "1.0.0",
   "minAppVersion": "1.16.0",
@@ -10,3 +10,4 @@
   "main": "main.js"
 
 }
+
