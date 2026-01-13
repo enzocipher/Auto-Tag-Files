@@ -1,157 +1,157 @@
-# AUTO Tags - Plugin para Obsidian
+# AUTO Tags - Obsidian Plugin
 
-Plugin que permite crear estructuras completas de archivos y carpetas en Obsidian mediante una sintaxis simple basada en texto.
+Plugin that allows creating complete file and folder structures in Obsidian using a simple text-based syntax.
 
-## Características principales
+## Key Features
 
-- Creación masiva de archivos y carpetas desde una interfaz intuitiva
-- Soporte para estructuras jerárquicas anidadas
-- Vista previa en tiempo real de la estructura a crear
-- Gestor visual para eliminar archivos y carpetas
-- Plantillas personalizables para archivos nuevos
-- Protección contra path traversal e inyecciones
+- Bulk creation of files and folders from an intuitive interface
+- Support for nested hierarchical structures
+- Real-time preview of the structure to be created
+- Visual manager for deleting files and folders
+- Customizable templates for new files
+- Protection against path traversal and injections
 
-## Instalación
+## Installation
 
-1. Descarga el archivo `main.js` y `manifest.json`
-2. Crea una carpeta llamada `auto-tags` en `.obsidian/plugins/`
-3. Coloca los archivos descargados en esta carpeta
-4. Activa el plugin desde Configuración → Plugins de comunidad
+1. Download the `main.js` and `manifest.json` files
+2. Create a folder named `auto-tags` in `.obsidian/plugins/`
+3. Place the downloaded files in this folder
+4. Enable the plugin from Settings → Community plugins
 
-## Uso básico
+## Basic Usage
 
-### Crear archivos y carpetas
+### Creating Files and Folders
 
-Accede al gestor mediante:
-- El icono en la barra lateral izquierda
-- El comando "Abrir creador de archivos" desde la paleta de comandos (Ctrl/Cmd + P)
+Access the manager through:
+- The icon in the left sidebar
+- The "Open file creator" command from the command palette (Ctrl/Cmd + P)
 
-### Sintaxis
+### Syntax
 
-La sintaxis es simple y utiliza un formato de una línea por elemento:
+The syntax is simple and uses a one-line-per-element format:
 
 ```
-archivo1
-archivo2
-carpeta/
-carpeta/archivo-dentro
-carpeta/subcarpeta/
-carpeta/subcarpeta/archivo-anidado
+file1
+file2
+folder/
+folder/file-inside
+folder/subfolder/
+folder/subfolder/nested-file
 ```
 
-#### Reglas de sintaxis
+#### Syntax Rules
 
-**Archivos simples**
+**Simple Files**
 ```
-nota
-documento
+note
+document
 ideas
 ```
-Crea tres archivos `.md` en la carpeta raíz: `nota.md`, `documento.md`, `ideas.md`
+Creates three `.md` files in the root folder: `note.md`, `document.md`, `ideas.md`
 
-**Carpetas vacías**
+**Empty Folders**
 ```
-proyectos/
-recursos/
+projects/
+resources/
 ```
-Crea dos carpetas vacías. El carácter `/` al final indica que es una carpeta.
+Creates two empty folders. The trailing `/` indicates it's a folder.
 
-**Estructuras anidadas**
+**Nested Structures**
 ```
-proyectos/
-proyectos/cliente-a/
-proyectos/cliente-a/propuesta
-proyectos/cliente-a/presupuesto
-proyectos/cliente-b/
-proyectos/cliente-b/contrato
-```
-
-**Sintaxis con barras adelante (prefijo)**
-```
-/archivo-raiz
-//carpeta/archivo-nivel-2
-///carpeta/subcarpeta/archivo-nivel-3
-```
-Las barras al inicio indican el nivel de anidamiento. Útil para estructuras complejas.
-
-### Ejemplos prácticos
-
-**Estructura de proyecto**
-```
-proyecto-web/
-proyecto-web/planificacion
-proyecto-web/requisitos
-proyecto-web/diseno/
-proyecto-web/diseno/wireframes
-proyecto-web/diseno/mockups
-proyecto-web/desarrollo/
-proyecto-web/desarrollo/frontend
-proyecto-web/desarrollo/backend
-proyecto-web/documentacion
+projects/
+projects/client-a/
+projects/client-a/proposal
+projects/client-a/budget
+projects/client-b/
+projects/client-b/contract
 ```
 
-**Sistema de notas temáticas**
+**Prefix Slash Syntax**
 ```
-aprendizaje/
-aprendizaje/programacion/
-aprendizaje/programacion/javascript
-aprendizaje/programacion/python
-aprendizaje/diseno/
-aprendizaje/diseno/ui-ux
-aprendizaje/diseno/tipografia
+/root-file
+//folder/level-2-file
+///folder/subfolder/level-3-file
+```
+Leading slashes indicate the nesting level. Useful for complex structures.
+
+### Practical Examples
+
+**Project Structure**
+```
+web-project/
+web-project/planning
+web-project/requirements
+web-project/design/
+web-project/design/wireframes
+web-project/design/mockups
+web-project/development/
+web-project/development/frontend
+web-project/development/backend
+web-project/documentation
 ```
 
-**Gestión de tareas por contexto**
+**Thematic Note System**
 ```
-tareas/
-tareas/trabajo
-tareas/personal
-tareas/estudios
-archivo/
-archivo/completadas
-archivo/canceladas
+learning/
+learning/programming/
+learning/programming/javascript
+learning/programming/python
+learning/design/
+learning/design/ui-ux
+learning/design/typography
 ```
 
-## Vista previa
+**Task Management by Context**
+```
+tasks/
+tasks/work
+tasks/personal
+tasks/studies
+archive/
+archive/completed
+archive/cancelled
+```
 
-La interfaz muestra una vista previa en tiempo real de la estructura que se creará:
+## Preview
 
-- Iconos de carpeta para directorios
-- Iconos de archivo para documentos
-- Indentación visual según el nivel de anidamiento
-- Contador de elementos totales
-- Validación de nombres inválidos
+The interface displays a real-time preview of the structure to be created:
 
-## Gestor de eliminación
+- Folder icons for directories
+- File icons for documents
+- Visual indentation based on nesting level
+- Total element counter
+- Invalid name validation
 
-La pestaña "Eliminar" proporciona un navegador de archivos donde puedes:
+## Deletion Manager
 
-- Ver la estructura completa de tu vault
-- Expandir y colapsar carpetas
-- Eliminar archivos individuales
-- Eliminar carpetas completas con todo su contenido
-- Confirmación antes de eliminar
+The "Delete" tab provides a file browser where you can:
 
-## Configuración
+- View the complete structure of your vault
+- Expand and collapse folders
+- Delete individual files
+- Delete complete folders with all their content
+- Confirmation before deletion
 
-Accede a la configuración del plugin desde Configuración → AUTO Tags.
+## Configuration
 
-### Opciones disponibles
+Access the plugin settings from Settings → AUTO Tags.
 
-**Ignorar mayúsculas/minúsculas**
+### Available Options
 
-Convierte automáticamente los nombres a minúsculas al crear archivos.
+**Ignore Case**
 
-- Desactivado: `Ideas.md`, `Proyecto.md`
-- Activado: `ideas.md`, `proyecto.md`
+Automatically converts names to lowercase when creating files.
 
-**Contenido por defecto**
+- Disabled: `Ideas.md`, `Project.md`
+- Enabled: `ideas.md`, `project.md`
 
-Plantilla que se aplicará a todos los archivos nuevos creados.
+**Default Content**
 
-Usa `{{tag}}` como variable para insertar el nombre del archivo.
+Template to be applied to all new files created.
 
-Ejemplos:
+Use `{{tag}}` as a variable to insert the file name.
+
+Examples:
 ```markdown
 # {{tag}}
 
@@ -165,94 +165,94 @@ tags:
 ```markdown
 # {{tag}}
 
-## Notas
+## Notes
 
-## Referencias
+## References
 ```
 
-## Límites y restricciones
+## Limits and Restrictions
 
-Por seguridad y rendimiento, el plugin implementa los siguientes límites:
+For security and performance, the plugin implements the following limits:
 
-- Máximo 1000 elementos por operación
-- Máximo 10 niveles de profundidad en estructuras anidadas
-- Nombres de archivo entre 1 y 255 caracteres
-- Caracteres prohibidos: `< > : " | ? *`
-- No se permiten secuencias de path traversal (`..`, `./`, `.\\`)
-- No se permiten nombres reservados del sistema (CON, PRN, AUX, etc.)
+- Maximum 1000 elements per operation
+- Maximum 10 nesting levels in structures
+- File names between 1 and 255 characters
+- Forbidden characters: `< > : " | ? *`
+- Path traversal sequences not allowed (`..`, `./`, `.\\`)
+- System reserved names not allowed (CON, PRN, AUX, etc.)
 
-## Casos de uso
+## Use Cases
 
-**Organización de proyectos**
+**Project Organization**
 
-Crea rápidamente la estructura base de un nuevo proyecto con todas sus carpetas y archivos iniciales.
+Quickly create the base structure of a new project with all its initial folders and files.
 
-**Sistema Zettelkasten**
+**Zettelkasten System**
 
-Genera archivos de índice y categorías para tu sistema de notas enlazadas.
+Generate index files and categories for your linked note system.
 
-**Gestión de conocimiento**
+**Knowledge Management**
 
-Establece una taxonomía completa de temas con archivos de entrada para cada uno.
+Establish a complete taxonomy of topics with entry files for each one.
 
-**Cursos y aprendizaje**
+**Courses and Learning**
 
-Crea una estructura de carpetas por módulos con archivos para cada lección.
+Create a folder structure by modules with files for each lesson.
 
-**Archivo de recursos**
+**Resource Archive**
 
-Organiza recursos por categorías y subcategorías con archivos de referencia.
+Organize resources by categories and subcategories with reference files.
 
-## Solución de problemas
+## Troubleshooting
 
-**Los archivos no se crean**
+**Files Are Not Created**
 
-Verifica que el nombre de la carpeta base no contenga caracteres inválidos y que no exista ya un archivo con el mismo nombre.
+Verify that the base folder name doesn't contain invalid characters and that no file with the same name already exists.
 
-**Estructura incorrecta**
+**Incorrect Structure**
 
-Revisa la vista previa antes de crear. Asegúrate de usar `/` al final para carpetas y que la indentación sea correcta.
+Review the preview before creating. Make sure to use `/` at the end for folders and that indentation is correct.
 
-**Elementos omitidos**
+**Skipped Elements**
 
-El plugin mostrará un mensaje con cuántos elementos fueron omitidos por errores de validación. Revisa la consola para ver detalles específicos.
+The plugin will show a message with how many elements were skipped due to validation errors. Check the console for specific details.
 
-**Error de profundidad excesiva**
+**Excessive Depth Error**
 
-Reduce el nivel de anidamiento a un máximo de 10 niveles.
+Reduce nesting level to a maximum of 10 levels.
 
-## Notas técnicas
+## Technical Notes
 
-### Seguridad
+### Security
 
-El plugin implementa múltiples capas de validación:
+The plugin implements multiple validation layers:
 
-- Sanitización de nombres de archivos y carpetas
-- Validación de paths para prevenir path traversal
-- Escape de contenido HTML en la interfaz
-- Validación de variables en plantillas
-- Límites de profundidad y cantidad de elementos
+- File and folder name sanitization
+- Path validation to prevent path traversal
+- HTML content escaping in the interface
+- Template variable validation
+- Depth and element quantity limits
 
-### Compatibilidad
+### Compatibility
 
-Compatible con Obsidian v1.0.0 en adelante. Probado en Windows, macOS y Linux.
+Compatible with Obsidian v1.0.0 and above. Tested on Windows, macOS, and Linux.
 
-### Rendimiento
+### Performance
 
-Para estructuras muy grandes (más de 500 elementos), la creación puede tomar algunos segundos. El plugin procesa los elementos de forma secuencial para evitar conflictos.
+For very large structures (more than 500 elements), creation may take a few seconds. The plugin processes elements sequentially to avoid conflicts.
 
-## Contribución
+## Contributing
 
-Si encuentras bugs o tienes sugerencias, puedes:
+If you find bugs or have suggestions, you can:
 
-- Reportar issues con descripción detallada del problema
-- Incluir ejemplos de entrada que causan el error
-- Especificar tu versión de Obsidian y sistema operativo
+- Report issues with detailed problem description
+- Include input examples that cause the error
+- Specify your Obsidian version and operating system
 
-## Licencia
+## License
 
-Este plugin es software libre. Puedes usarlo, modificarlo y distribuirlo libremente.
+This plugin is free software. You can use, modify, and distribute it freely.
 
-## Créditos
+## Credits
 
-Desarrollado para simplificar la creación de estructuras de archivos en Obsidian.
+Developed to simplify file structure creation in Obsidian.
