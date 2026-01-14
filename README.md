@@ -235,7 +235,7 @@ The plugin implements multiple validation layers:
 
 ### Compatibility
 
-Compatible with Obsidian v1.0.0 and above. Tested on Windows, macOS, and Linux.
+Compatible with Obsidian v1.11 and above. Tested on Windows, macOS, and Linux.
 
 ### Performance
 
